@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Flame,
   ShieldCheck,
@@ -27,6 +28,7 @@ import {
   Image,
   FileText,
   Video,
+  ArrowLeft,
 } from "lucide-react";
 
 export default function FirebaseGuide() {
@@ -106,6 +108,22 @@ export default function FirebaseGuide() {
       {/* HEADER / HERO SECTION */}
       <header className="relative py-20 px-4 max-w-6xl mx-auto text-center border-b border-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.06),transparent_60%)]" />
+
+        {/* Кнопка назад */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="absolute top-8 left-4 z-10"
+        >
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-100 transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Назад к категориям</span>
+          </Link>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

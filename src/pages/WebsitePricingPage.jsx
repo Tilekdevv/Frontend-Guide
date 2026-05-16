@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Globe,
   Server,
@@ -13,6 +14,7 @@ import {
   CheckCircle,
   Clock,
   Briefcase,
+  ArrowLeft,
 } from "lucide-react";
 
 export default function WebsitePricingPage() {
@@ -69,6 +71,21 @@ export default function WebsitePricingPage() {
 
       {/* ШАПКА / HERO SECTION */}
       <header className="relative py-24 px-4 max-w-6xl mx-auto text-center border-b border-slate-900 overflow-hidden">
+        {/* Кнопка назад */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="absolute top-8 left-4"
+        >
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-100 transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Назад к категориям</span>
+          </Link>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

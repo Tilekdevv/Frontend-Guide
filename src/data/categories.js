@@ -94,7 +94,7 @@ export const categories = [
   },
   {
     id: 9,
-    slug: "frontend-job",
+    slug: "job-search",
     title: "Работа Frontend Developer",
     description:
       "Поиск работы, собеседования, портфолио. Всё о карьере frontend разработчика.",
