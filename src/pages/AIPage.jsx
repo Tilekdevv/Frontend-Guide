@@ -656,17 +656,12 @@ const AIPage = () => {
                 работать с AI, работают быстрее, эффективнее и создают лучшие
                 проекты.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  to="/"
-                  className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
-                >
-                  Вернуться к категориям
-                </Link>
-                <button className="px-6 py-3 glass glass-hover rounded-xl font-semibold text-gray-100 transition-all">
-                  Попробовать ChatGPT
-                </button>
-              </div>
+              <Link
+                to="/"
+                className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
+              >
+                Вернуться на главную
+              </Link>
             </div>
           </motion.div>
         </div>

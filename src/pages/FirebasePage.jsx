@@ -1050,12 +1050,18 @@ function TodoList() {
             <Layers className="w-5 h-5 text-orange-400" />
           </div>
           <h3 className="text-xl font-bold">Итог урока</h3>
-          <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+          <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-6">
             Главное, что нужно понять: Firebase — это твой легальный чит-код в
             мире веб-разработки. Он позволяет закрывать потребности клиентов
             «под ключ» в одиночку, ускоряет сборку MVP стартапов и дает отличную
             базу для понимания того, как фронтенд общается с сервером.
           </p>
+          <Link
+            to="/"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-600 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
+          >
+            Вернуться на главную
+          </Link>
         </section>
       </main>
 

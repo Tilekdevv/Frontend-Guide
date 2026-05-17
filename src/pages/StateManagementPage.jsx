@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowLeft,
   Layers,
@@ -14,51 +14,51 @@ import {
   Code,
   Box,
   Network,
-  Database
-} from 'lucide-react'
-import Navbar from '../components/Navbar'
+  Database,
+} from "lucide-react";
+import Navbar from "../components/Navbar";
 
 const StateManagementPage = () => {
-  const [activeTab, setActiveTab] = useState('props')
+  const [activeTab, setActiveTab] = useState("props");
 
   const comparisonData = [
     {
-      feature: 'Сложность',
-      props: { value: 'Очень просто', color: 'green' },
-      context: { value: 'Средне', color: 'yellow' },
-      redux: { value: 'Сложно', color: 'red' }
+      feature: "Сложность",
+      props: { value: "Очень просто", color: "green" },
+      context: { value: "Средне", color: "yellow" },
+      redux: { value: "Сложно", color: "red" },
     },
     {
-      feature: 'Настройка',
-      props: { value: 'Не требуется', color: 'green' },
-      context: { value: 'Минимальная', color: 'yellow' },
-      redux: { value: 'Много кода', color: 'red' }
+      feature: "Настройка",
+      props: { value: "Не требуется", color: "green" },
+      context: { value: "Минимальная", color: "yellow" },
+      redux: { value: "Много кода", color: "red" },
     },
     {
-      feature: 'Размер проекта',
-      props: { value: 'Маленький', color: 'green' },
-      context: { value: 'Средний', color: 'yellow' },
-      redux: { value: 'Большой', color: 'green' }
+      feature: "Размер проекта",
+      props: { value: "Маленький", color: "green" },
+      context: { value: "Средний", color: "yellow" },
+      redux: { value: "Большой", color: "green" },
     },
     {
-      feature: 'Производительность',
-      props: { value: 'Отлично', color: 'green' },
-      context: { value: 'Хорошо', color: 'yellow' },
-      redux: { value: 'Отлично', color: 'green' }
+      feature: "Производительность",
+      props: { value: "Отлично", color: "green" },
+      context: { value: "Хорошо", color: "yellow" },
+      redux: { value: "Отлично", color: "green" },
     },
     {
-      feature: 'Debugging',
-      props: { value: 'Просто', color: 'green' },
-      context: { value: 'Средне', color: 'yellow' },
-      redux: { value: 'DevTools', color: 'green' }
+      feature: "Debugging",
+      props: { value: "Просто", color: "green" },
+      context: { value: "Средне", color: "yellow" },
+      redux: { value: "DevTools", color: "green" },
     },
     {
-      feature: 'Когда использовать',
-      props: { value: 'Локальные данные', color: 'blue' },
-      context: { value: 'Темы, язык, auth', color: 'blue' },
-      redux: { value: 'Сложный state', color: 'blue' }
-    }
-  ]
+      feature: "Когда использовать",
+      props: { value: "Локальные данные", color: "blue" },
+      context: { value: "Темы, язык, auth", color: "blue" },
+      redux: { value: "Сложный state", color: "blue" },
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
@@ -90,7 +90,7 @@ const StateManagementPage = () => {
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: 'spring' }}
+              transition={{ delay: 0.2, type: "spring" }}
               className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 mb-6"
             >
               <Layers className="w-10 h-10 text-white" />
@@ -110,19 +110,19 @@ const StateManagementPage = () => {
             className="mb-16"
           >
             <div className="flex justify-center space-x-4 mb-8">
-              {['props', 'context', 'redux'].map((tab) => (
+              {["props", "context", "redux"].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                     activeTab === tab
-                      ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
-                      : 'glass text-gray-400 hover:text-gray-100'
+                      ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg"
+                      : "glass text-gray-400 hover:text-gray-100"
                   }`}
                 >
-                  {tab === 'props' && 'Props'}
-                  {tab === 'context' && 'Context API'}
-                  {tab === 'redux' && 'Redux Toolkit'}
+                  {tab === "props" && "Props"}
+                  {tab === "context" && "Context API"}
+                  {tab === "redux" && "Redux Toolkit"}
                 </button>
               ))}
             </div>
@@ -133,9 +133,9 @@ const StateManagementPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {activeTab === 'props' && <PropsSection />}
-              {activeTab === 'context' && <ContextSection />}
-              {activeTab === 'redux' && <ReduxSection />}
+              {activeTab === "props" && <PropsSection />}
+              {activeTab === "context" && <ContextSection />}
+              {activeTab === "redux" && <ReduxSection />}
             </motion.div>
           </motion.div>
 
@@ -178,17 +178,23 @@ const StateManagementPage = () => {
                           {row.feature}
                         </td>
                         <td className="px-6 py-4 text-center">
-                          <span className={`inline-block px-3 py-1 rounded-lg text-sm bg-${row.props.color}-500/20 text-${row.props.color}-400`}>
+                          <span
+                            className={`inline-block px-3 py-1 rounded-lg text-sm bg-${row.props.color}-500/20 text-${row.props.color}-400`}
+                          >
                             {row.props.value}
                           </span>
                         </td>
                         <td className="px-6 py-4 text-center">
-                          <span className={`inline-block px-3 py-1 rounded-lg text-sm bg-${row.context.color}-500/20 text-${row.context.color}-400`}>
+                          <span
+                            className={`inline-block px-3 py-1 rounded-lg text-sm bg-${row.context.color}-500/20 text-${row.context.color}-400`}
+                          >
                             {row.context.value}
                           </span>
                         </td>
                         <td className="px-6 py-4 text-center">
-                          <span className={`inline-block px-3 py-1 rounded-lg text-sm bg-${row.redux.color}-500/20 text-${row.redux.color}-400`}>
+                          <span
+                            className={`inline-block px-3 py-1 rounded-lg text-sm bg-${row.redux.color}-500/20 text-${row.redux.color}-400`}
+                          >
                             {row.redux.value}
                           </span>
                         </td>
@@ -212,10 +218,10 @@ const StateManagementPage = () => {
                 icon={Box}
                 gradient="from-green-500 to-emerald-500"
                 cases={[
-                  'Передача данных родитель → ребёнок',
-                  'Маленькие компоненты',
-                  'Локальные данные',
-                  'Простые проекты'
+                  "Передача данных родитель → ребёнок",
+                  "Маленькие компоненты",
+                  "Локальные данные",
+                  "Простые проекты",
                 ]}
               />
               <UseCaseCard
@@ -223,10 +229,10 @@ const StateManagementPage = () => {
                 icon={Network}
                 gradient="from-blue-500 to-cyan-500"
                 cases={[
-                  'Темы (dark/light mode)',
-                  'Язык интерфейса',
-                  'Данные пользователя',
-                  'Средние проекты'
+                  "Темы (dark/light mode)",
+                  "Язык интерфейса",
+                  "Данные пользователя",
+                  "Средние проекты",
                 ]}
               />
               <UseCaseCard
@@ -234,10 +240,10 @@ const StateManagementPage = () => {
                 icon={Database}
                 gradient="from-purple-500 to-pink-500"
                 cases={[
-                  'Большие приложения',
-                  'Сложная логика state',
-                  'Много компонентов',
-                  'Нужен debugging'
+                  "Большие приложения",
+                  "Сложная логика state",
+                  "Много компонентов",
+                  "Нужен debugging",
                 ]}
               />
             </div>
@@ -348,18 +354,26 @@ function Cart() {
               Главный совет
             </h3>
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto text-lg">
-              Начинайте с Props. Если появляется props drilling — используйте Context API. 
-              Если проект растёт и state становится сложным — переходите на Redux Toolkit.
+              Начинайте с Props. Если появляется props drilling — используйте
+              Context API. Если проект растёт и state становится сложным —
+              переходите на Redux Toolkit.
             </p>
-            <p className="text-gray-500 italic">
-              Не используйте Redux просто потому что "так принято". Выбирайте инструмент под задачу!
+            <p className="text-gray-500 italic mb-6">
+              Не используйте Redux просто потому что "так принято". Выбирайте
+              инструмент под задачу!
             </p>
+            <Link
+              to="/"
+              className="inline-block px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
+            >
+              Вернуться на главную
+            </Link>
           </motion.div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 // Sections Components
 const PropsSection = () => (
@@ -371,15 +385,18 @@ const PropsSection = () => (
       <div className="flex-1">
         <h3 className="text-2xl font-bold text-gray-100 mb-3">Props</h3>
         <p className="text-gray-400 leading-relaxed">
-          Props (properties) — это способ передачи данных от родительского компонента к дочернему. 
-          Это самый простой и базовый способ работы с данными в React.
+          Props (properties) — это способ передачи данных от родительского
+          компонента к дочернему. Это самый простой и базовый способ работы с
+          данными в React.
         </p>
       </div>
     </div>
 
     {/* Diagram */}
     <div className="mb-8">
-      <h4 className="text-lg font-semibold text-gray-200 mb-4">Как это работает:</h4>
+      <h4 className="text-lg font-semibold text-gray-200 mb-4">
+        Как это работает:
+      </h4>
       <div className="flex flex-col items-center space-y-4 p-6 bg-gray-900/50 rounded-xl">
         <div className="px-6 py-3 bg-green-500/20 border-2 border-green-500 rounded-lg text-green-400 font-mono">
           Parent Component
@@ -395,14 +412,21 @@ const PropsSection = () => (
     <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
       <div className="flex items-start space-x-3 mb-3">
         <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0" />
-        <h4 className="text-lg font-semibold text-red-400">Props Drilling - Проблема</h4>
+        <h4 className="text-lg font-semibold text-red-400">
+          Props Drilling - Проблема
+        </h4>
       </div>
       <p className="text-gray-300 mb-4">
-        Когда нужно передать данные через много уровней компонентов, код становится сложным:
+        Когда нужно передать данные через много уровней компонентов, код
+        становится сложным:
       </p>
       <div className="flex flex-col items-center space-y-2 p-4 bg-gray-900/50 rounded-lg">
-        <div className="text-sm text-gray-400 font-mono">App → Header → Nav → Button</div>
-        <p className="text-xs text-gray-500">Данные проходят через все компоненты, даже если им не нужны</p>
+        <div className="text-sm text-gray-400 font-mono">
+          App → Header → Nav → Button
+        </div>
+        <p className="text-xs text-gray-500">
+          Данные проходят через все компоненты, даже если им не нужны
+        </p>
       </div>
     </div>
 
@@ -418,12 +442,14 @@ const PropsSection = () => (
         <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
         <div>
           <p className="text-gray-300 font-medium">Минусы</p>
-          <p className="text-sm text-gray-500">Props drilling в больших проектах</p>
+          <p className="text-sm text-gray-500">
+            Props drilling в больших проектах
+          </p>
         </div>
       </div>
     </div>
   </div>
-)
+);
 
 const ContextSection = () => (
   <div className="glass rounded-2xl p-8">
@@ -434,15 +460,18 @@ const ContextSection = () => (
       <div className="flex-1">
         <h3 className="text-2xl font-bold text-gray-100 mb-3">Context API</h3>
         <p className="text-gray-400 leading-relaxed">
-          Context API — встроенное решение React для создания глобального состояния. 
-          Позволяет избежать props drilling и делиться данными между компонентами.
+          Context API — встроенное решение React для создания глобального
+          состояния. Позволяет избежать props drilling и делиться данными между
+          компонентами.
         </p>
       </div>
     </div>
 
     {/* Diagram */}
     <div className="mb-8">
-      <h4 className="text-lg font-semibold text-gray-200 mb-4">Как это работает:</h4>
+      <h4 className="text-lg font-semibold text-gray-200 mb-4">
+        Как это работает:
+      </h4>
       <div className="p-6 bg-gray-900/50 rounded-xl">
         <div className="flex flex-col items-center space-y-4">
           <div className="px-6 py-3 bg-blue-500/20 border-2 border-blue-500 rounded-lg text-blue-400 font-mono">
@@ -473,9 +502,16 @@ const ContextSection = () => (
 
     {/* Use Cases */}
     <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-6 mb-6">
-      <h4 className="text-lg font-semibold text-blue-400 mb-3">Где использовать:</h4>
+      <h4 className="text-lg font-semibold text-blue-400 mb-3">
+        Где использовать:
+      </h4>
       <ul className="space-y-2">
-        {['Темы (dark/light mode)', 'Язык интерфейса (i18n)', 'Данные авторизованного пользователя', 'Настройки приложения'].map((item, i) => (
+        {[
+          "Темы (dark/light mode)",
+          "Язык интерфейса (i18n)",
+          "Данные авторизованного пользователя",
+          "Настройки приложения",
+        ].map((item, i) => (
           <li key={i} className="flex items-center space-x-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-blue-400" />
             <span>{item}</span>
@@ -489,19 +525,23 @@ const ContextSection = () => (
         <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
         <div>
           <p className="text-gray-300 font-medium">Плюсы</p>
-          <p className="text-sm text-gray-500">Встроен в React, нет props drilling</p>
+          <p className="text-sm text-gray-500">
+            Встроен в React, нет props drilling
+          </p>
         </div>
       </div>
       <div className="flex items-start space-x-3">
         <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
         <div>
           <p className="text-gray-300 font-medium">Минусы</p>
-          <p className="text-sm text-gray-500">Может вызвать лишние ре-рендеры</p>
+          <p className="text-sm text-gray-500">
+            Может вызвать лишние ре-рендеры
+          </p>
         </div>
       </div>
     </div>
   </div>
-)
+);
 
 const ReduxSection = () => (
   <div className="glass rounded-2xl p-8">
@@ -512,15 +552,18 @@ const ReduxSection = () => (
       <div className="flex-1">
         <h3 className="text-2xl font-bold text-gray-100 mb-3">Redux Toolkit</h3>
         <p className="text-gray-400 leading-relaxed">
-          Redux Toolkit — мощная библиотека для управления состоянием в больших приложениях. 
-          Предоставляет предсказуемый способ изменения state и отличные инструменты для отладки.
+          Redux Toolkit — мощная библиотека для управления состоянием в больших
+          приложениях. Предоставляет предсказуемый способ изменения state и
+          отличные инструменты для отладки.
         </p>
       </div>
     </div>
 
     {/* Diagram */}
     <div className="mb-8">
-      <h4 className="text-lg font-semibold text-gray-200 mb-4">Как это работает:</h4>
+      <h4 className="text-lg font-semibold text-gray-200 mb-4">
+        Как это работает:
+      </h4>
       <div className="p-6 bg-gray-900/50 rounded-xl">
         <div className="grid grid-cols-3 gap-4 mb-4">
           <div className="text-center">
@@ -555,13 +598,15 @@ const ReduxSection = () => (
 
     {/* For Big Projects */}
     <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6 mb-6">
-      <h4 className="text-lg font-semibold text-purple-400 mb-3">Для больших проектов:</h4>
+      <h4 className="text-lg font-semibold text-purple-400 mb-3">
+        Для больших проектов:
+      </h4>
       <ul className="space-y-2">
         {[
-          'Сложная логика изменения state',
-          'Много компонентов используют одни данные',
-          'Нужна история изменений (time-travel debugging)',
-          'Middleware для async операций'
+          "Сложная логика изменения state",
+          "Много компонентов используют одни данные",
+          "Нужна история изменений (time-travel debugging)",
+          "Middleware для async операций",
         ].map((item, i) => (
           <li key={i} className="flex items-center space-x-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-purple-400" />
@@ -576,7 +621,9 @@ const ReduxSection = () => (
         <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
         <div>
           <p className="text-gray-300 font-medium">Плюсы</p>
-          <p className="text-sm text-gray-500">Мощный, предсказуемый, DevTools</p>
+          <p className="text-sm text-gray-500">
+            Мощный, предсказуемый, DevTools
+          </p>
         </div>
       </div>
       <div className="flex items-start space-x-3">
@@ -588,13 +635,13 @@ const ReduxSection = () => (
       </div>
     </div>
   </div>
-)
+);
 
 const Section = ({ icon: Icon, title, gradient, children }) => (
   <motion.section
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-50px' }}
+    viewport={{ once: true, margin: "-50px" }}
     className="mb-20"
   >
     <div className="flex items-center space-x-3 mb-8">
@@ -605,27 +652,29 @@ const Section = ({ icon: Icon, title, gradient, children }) => (
     </div>
     {children}
   </motion.section>
-)
+);
 
 const UseCaseCard = ({ title, icon: Icon, gradient, cases }) => (
-  <motion.div
-    whileHover={{ y: -4 }}
-    className="glass rounded-2xl p-6"
-  >
-    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-4`}>
+  <motion.div whileHover={{ y: -4 }} className="glass rounded-2xl p-6">
+    <div
+      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-4`}
+    >
       <Icon className="w-6 h-6 text-white" />
     </div>
     <h3 className="text-xl font-bold text-gray-100 mb-4">{title}</h3>
     <ul className="space-y-2">
       {cases.map((item, i) => (
-        <li key={i} className="flex items-start space-x-2 text-gray-400 text-sm">
+        <li
+          key={i}
+          className="flex items-start space-x-2 text-gray-400 text-sm"
+        >
           <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
           <span>{item}</span>
         </li>
       ))}
     </ul>
   </motion.div>
-)
+);
 
 const CodeExample = ({ title, description, code }) => (
   <motion.div
@@ -644,6 +693,6 @@ const CodeExample = ({ title, description, code }) => (
       </pre>
     </div>
   </motion.div>
-)
+);
 
-export default StateManagementPage
+export default StateManagementPage;

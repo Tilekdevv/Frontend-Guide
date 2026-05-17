@@ -670,6 +670,21 @@ const RealWebsitesPage = () => {
               </div>
             </div>
           </motion.section>
+
+          {/* Back to Home Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="text-center"
+          >
+            <Link
+              to="/"
+              className="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
+            >
+              Вернуться на главную
+            </Link>
+          </motion.div>
         </div>
       </div>
     </div>

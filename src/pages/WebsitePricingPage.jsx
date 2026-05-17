@@ -476,6 +476,16 @@ export default function WebsitePricingPage() {
             </div>
           </div>
         </section>
+
+        {/* Back to Home Button */}
+        <section className="text-center py-8">
+          <Link
+            to="/"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
+          >
+            Вернуться на главную
+          </Link>
+        </section>
       </main>
 
       {/* ФУТЕР */}

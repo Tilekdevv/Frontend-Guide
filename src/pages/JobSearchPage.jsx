@@ -370,13 +370,19 @@ export default function JobSeachPage() {
             <Briefcase className="w-5 h-5 text-indigo-400" />
           </div>
           <h3 className="text-lg font-bold">Напутствие ментора</h3>
-          <p className="text-slate-400 text-xs leading-relaxed">
+          <p className="text-slate-400 text-xs leading-relaxed mb-6">
             Поиск первой работы — это тоже полноценная работа. Будут отказы,
             будут игноры — это нормальная часть воронки найма. Главный секрет
             успеха джуниора: продолжать ежедневно отправлять качественные
             отклики, параллельно улучшая свой код на GitHub. Кто не бросает —
             тот находит.
           </p>
+          <Link
+            to="/"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
+          >
+            Вернуться на главную
+          </Link>
         </section>
       </main>
 

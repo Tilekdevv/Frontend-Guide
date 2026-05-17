@@ -36,18 +36,13 @@ const CategoryCard = ({ category, index }) => {
               {category.description}
             </p>
 
-            {/* Footer */}
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-500 font-medium">
-                {category.lessons} уроков
-              </span>
-              <motion.div
-                className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"
-                whileHover={{ x: 5 }}
-              >
-                <ArrowRight className="w-5 h-5" />
-              </motion.div>
-            </div>
+            {/* Arrow indicator on hover */}
+            <motion.div
+              className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity flex justify-end"
+              whileHover={{ x: 5 }}
+            >
+              <ArrowRight className="w-5 h-5" />
+            </motion.div>
           </div>
 
           {/* Decorative elements */}

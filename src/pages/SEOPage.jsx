@@ -583,12 +583,18 @@ Disallow: /private/`}</code>
             <CheckCircle className="w-5 h-5 text-emerald-400" />
           </div>
           <h3 className="text-xl font-bold">Итог</h3>
-          <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+          <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-6">
             SEO — это не магия, а набор технических настроек и правил. Следуй
             этому чек-листу, добавь сайт в Google Search Console, создай
             sitemap.xml и robots.txt — и твой сайт начнет появляться в поиске
             через 1-4 недели.
           </p>
+          <Link
+            to="/"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-semibold text-white hover:shadow-lg transition-all"
+          >
+            Вернуться на главную
+          </Link>
         </section>
       </main>
 
